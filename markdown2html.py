@@ -28,10 +28,12 @@ def convert_markdown_to_html(input_file, output_file):
 
 def main():
     # Check if the number of arguments is correct
-    if len(sys.argv) != 3:
+    if len(sys.argv) == 1:
         print("Usage: ./markdown2html.py <input_file> <output_file>", file=sys.stderr)
         sys.exit(1)
-
+    if len(sys.arg) == 2:
+        print("Usage: ./markdown2html.py README.md README.html")
+        sys.exit(1)
     # Extract input and output file names
     input_file = sys.argv[1]
     output_file = sys.argv[2]

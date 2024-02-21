@@ -87,6 +87,7 @@ def main():
     # Extract input and output file names
     input_file = sys.argv[1]
     output_file = sys.argv[2]
+
     # Check if the Markdown file exists
     if not os.path.exists(input_file):
         print(f"Missing {input_file}", file=sys.stderr)
@@ -98,7 +99,7 @@ def main():
     # Convert Markdown to HTML
     with open(input_file) as IN:
         with open(output_file, 'w') as OUT:
-            lines = IN.read().splitlines
+            lines = IN.read().splitlines()
             html = ""
 
             while(len(lines) != 0):

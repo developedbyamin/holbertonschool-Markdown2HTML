@@ -75,7 +75,7 @@ def brackets(line):
     if(first != -1 and last != -1):
         text = line[first+2:last]
         text = text.replace('c','')
-        text = text.replace('c','')
+        text = text.replace('C','')
         line = line[:first] + text + line[last+2:]
     return line
 

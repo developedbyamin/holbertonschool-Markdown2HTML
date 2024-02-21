@@ -84,6 +84,9 @@ def brackets(line):
     
 
 def main():
+    # Extract input and output file names
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
     # Check if the Markdown file exists
     if not os.path.exists(input_file):
         print(f"Missing {input_file}", file=sys.stderr)
@@ -92,10 +95,6 @@ def main():
     if len(sys.argv) == 1 or len(sys.argv) == 2:
         print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
         sys.exit(1)
-    # Extract input and output file names
-    input_file = sys.argv[1]
-    output_file = sys.argv[2]
-
     # Convert Markdown to HTML
     with open(input_file) as IN:
         with open(output_file, 'w') as OUT:

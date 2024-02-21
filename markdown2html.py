@@ -52,8 +52,8 @@ def getLines(lines, char = '', isAlpha = False):
     return l
 
 def bold(line):
-    line = re.sub("\*\*","<b>",line,1)
-    line = re.sub("\*\*", "</b>",line,1)
+    line = re.sub(r"\*\*", "<b>", line, 1)
+    line = re.sub(r"\*\*", "</b>", line, 1)
     return line
 
 def emphasize(line):
@@ -64,7 +64,7 @@ def emphasize(line):
 def sqBrackets(line):
     first = line.find("[[")
     last = line.find("]]")
-    if(first != -1 and last != -1):
+    if first != -1 and last != -1:
         text = line[first+2:last]
         line = line[:first] + str(hashlib.md5(text.encode()).hexdigest()) + line[last+2:]
     return line

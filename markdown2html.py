@@ -52,8 +52,8 @@ def getLines(lines, char = '', isAlpha = False):
     return l
 
 def bold(line):
-    line = re.sub("\*\*","<b>",line,1)
-    line = re.sub("\*\*", "</b>",line,1)
+    line = re.sub(r"\*\*", "<b>", line, 1)
+    line = re.sub(r"\*\*", "</b>", line, 1)
     return line
 
 def emphasize(line):
@@ -76,7 +76,7 @@ def brackets(line):
         text = line[first+2:last]
         text = text.replace('c','')
         text = text.replace('c','')
-        line = line[:id] + text + line[last+2:]
+        line = line[:first] + text + line[last+2:]
     return line
 
 def convert_markdown_to_html(input_file, output_file):

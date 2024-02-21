@@ -99,8 +99,8 @@ def convert_markdown_to_html(input_file, output_file):
                     elif(line[0] == "-"):
                         l = getLines(lines,'-')
                         html += uoList(l,"ul")
-                    elif(line[0] == "-"):
-                        l = getLines(lines,'-')
+                    elif(line[0] == "*"):
+                        l = getLines(lines,'*')
                         html += uoList(l,"ol")
                     elif(line[0].isalpha):
                         l = getLines(lines, isAlpha = True)

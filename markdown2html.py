@@ -79,24 +79,8 @@ def brackets(line):
         line = line[:id] + text + line[last+2:]
     return line
 
-#def convert_markdown_to_html(input_file, output_file):
+def convert_markdown_to_html(input_file, output_file):
     # Your Markdown to HTML conversion logic
-    
-
-def main():
-    # Extract input and output file names
-    input_file = sys.argv[1]
-    output_file = sys.argv[2]
-
-    # Check if the Markdown file exists
-    if not os.path.exists(input_file):
-        print(f"Missing {input_file}", file=sys.stderr)
-        sys.exit(1)
-    # Check if the number of arguments is correct
-    if len(sys.argv) == 1 or len(sys.argv) == 2:
-        print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
-        sys.exit(1)
-    # Convert Markdown to HTML
     with open(input_file) as IN:
         with open(output_file, 'w') as OUT:
             lines = IN.read().splitlines()
@@ -123,6 +107,23 @@ def main():
                         html += paragraph(l)
             OUT.write(html)
     exit(0)
+
+def main():
+    # Extract input and output file names
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
+
+    # Check if the Markdown file exists
+    if not os.path.exists(input_file):
+        print(f"Missing {input_file}", file=sys.stderr)
+        sys.exit(1)
+    # Check if the number of arguments is correct
+    if len(sys.argv) == 1 or len(sys.argv) == 2:
+        print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
+        sys.exit(1)
+    # Convert Markdown to HTML
+    convert_markdown_to_html(input_file, output_file)
+    sys.exit(0)
 
 if __name__ == "__main__":
     main()

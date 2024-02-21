@@ -81,8 +81,8 @@ def brackets(line):
 
 def convert_markdown_to_html(input_file, output_file):
     # Your Markdown to HTML conversion logic
-    with open(sys.argv[1]) as IN:
-        with open(sys.argv[2], 'w') as OUT:
+    with open(input_file) as IN:
+        with open(output_file, 'w') as OUT:
             lines = IN.read().splitlines
             html = ""
 
@@ -105,7 +105,8 @@ def convert_markdown_to_html(input_file, output_file):
                     elif(line[0].isalpha):
                         l = getLines(lines, isAlpha = True)
                         html += paragraph(l)
-        OUT.write(html)
+            OUT.write(html)
+    exit(0)
 
 def main():
     # Check if the Markdown file exists
